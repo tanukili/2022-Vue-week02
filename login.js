@@ -20,6 +20,12 @@ createApp({
             axios.post(api, this.user)
                 .then((res) =>{
                     console.log(res);
+                    // 取得 token 與 expired
+                    const {token , expired} = res.data;
+                    // 寫入 cookie (使用 )
+                    document.cookie = `loginToken=${ token }; expires=${ new Date(expired)}, 31 Dec 9999 23:59:59 GMT;`;
+                    // 轉跳至商品頁面
+                    window.location = 'products.html';
                 })
                 .catch((err) => {
                     alert(err.data.message);
