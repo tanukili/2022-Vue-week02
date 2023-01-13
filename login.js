@@ -14,7 +14,16 @@ createApp({
     methods: {
         // 登入方法
         login() {
-            console.log(this.user.username, this.user.password);
+            // 定義 api 路徑
+            const api = 'https://vue3-course-api.hexschool.io/v2/admin/signin';
+            // 進行串接
+            axios.post(api, this.user)
+                .then((res) =>{
+                    console.log(res);
+                })
+                .catch((err) => {
+                    alert(err.data.message);
+                })
         }
     },
 }).mount('#app')
