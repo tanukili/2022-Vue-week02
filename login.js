@@ -1,7 +1,7 @@
 // vue 載入
 import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.45/vue.esm-browser.min.js';
 
-createApp({
+const app ={
     data() {
         return {
             // 建立資料格式
@@ -32,4 +32,6 @@ createApp({
                 })
         }
     },
-}).mount('#app')
+}
+
+createApp(app).mount('#app');
