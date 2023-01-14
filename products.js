@@ -63,9 +63,19 @@ import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.45/vue
 const app ={
   data() {
     return {
-      text: 1
+      products: [],
+      tempProduct: {}
     }
+  },
+  methods: {
+    check(){
+      console.log(this.tempProduct);
+    }
+  },
+  created() {
+    this.products = products;
   },
 }
 
-createApp(app).mount('#app')
+createApp(app).mount('#app');
+
