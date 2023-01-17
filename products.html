@@ -31,7 +31,7 @@
               </thead>
               <tbody>
                 <!-- 選染產品 -->
-                <tr v-for=" product in products">
+                <tr v-for=" product in products" :key="id">
                   <td width="150">{{ product.title }}</td>
                   <td width="120">{{ product.origin_price }}</td>
                   <td width="120">{{ product.price }}</td>
@@ -41,7 +41,7 @@
                   </td>
                   <td width="120">
                     <!-- 將點擊到的 物件內容 賦予到 tempProduct -->
-                    <button type="button" class="btn btn-primary" @click="tempProduct = product">
+                    <button type="button" class="btn btn-primary" @click="checkAdmin()">
                       查看細節
                     </button>
                   </td>
