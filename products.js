@@ -35,10 +35,11 @@ const app ={
         .catch((err) => {
           alert(err.data.message);
         })
+    },
+    // 方法：點擊按鈕後查看商品資料
+    openProduct(item) {
+      this.tempProduct = item;
     }
-    //
-
-
   },
   created() {
     // 取出 token

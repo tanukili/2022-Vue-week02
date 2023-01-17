@@ -31,7 +31,7 @@
               </thead>
               <tbody>
                 <!-- 選染產品 -->
-                <tr v-for=" product in products" :key="id">
+                <tr v-for="(product, id) in products" :key="id">
                   <td width="150">{{ product.title }}</td>
                   <td width="120">{{ product.origin_price }}</td>
                   <td width="120">{{ product.price }}</td>
@@ -41,7 +41,7 @@
                   </td>
                   <td width="120">
                     <!-- 將點擊到的 物件內容 賦予到 tempProduct -->
-                    <button type="button" class="btn btn-primary" @click="checkAdmin()">
+                    <button type="button" class="btn btn-primary" @click="openProduct(product)">
                       查看細節
                     </button>
                   </td>
@@ -72,7 +72,8 @@
               </div>
               <!-- v-for 渲染出  imagesUrl -->
               <span v-for="(img, id) in tempProduct.imagesUrl" :key="id">
-                <img :src="img" :alt="'副圖' + id" class="images m-2" />
+                <!-- v-if 若有 img 則進行渲染 -->
+                <img :src="img" :alt="'副圖' + id" class="images m-2" v-if="img" />
               </span>
             </div>
             <!-- v-else　加入判斷：若沒有選擇到產品， -->
