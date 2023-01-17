@@ -68,9 +68,7 @@ const app ={
     }
   },
   methods: {
-    check(){
-      console.log(this.tempProduct);
-    }
+
   },
   created() {
     this.products = products;
