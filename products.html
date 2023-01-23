@@ -71,6 +71,7 @@
                 </div>
               </div>
               <!-- v-for 渲染出  imagesUrl -->
+              <!-- 判斷式也可以寫 v-if="tempProduct?.imagesUrl?.length" 確認是否有陣列，而 可選串聯 (?)可避免當內容只有一個時產生錯誤 -->
               <span v-for="(img, id) in tempProduct.imagesUrl" :key="id">
                 <!-- v-if 若有 img 則進行渲染 -->
                 <img :src="img" :alt="'副圖' + id" class="images m-2" v-if="img" />
